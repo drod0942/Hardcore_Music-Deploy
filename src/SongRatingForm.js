@@ -23,7 +23,7 @@ const SongRatingForm = ({ setSongs }) => {
         }
 
         // Check for duplicate song on the server side.
-        const songsRes = await axios.get('http://localhost/homework3/Controller/RestApi/Ratings/Read_ratings.php');
+        const songsRes = await axios.get('https://hardcoreratings.great-site.net/Controller/RestApi/Ratings/Read_ratings.php');
         const existingRating = songsRes.data.body.find((s) => s.artist === newSong.artist && s.song === newSong.song);
         if (existingRating) {
             alert('This song has already been rated!');

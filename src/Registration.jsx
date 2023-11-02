@@ -32,7 +32,7 @@ export const Register = (props) => {
 
         try {
             const response = await axios.post(
-                'http://localhost/homework3/Controller/RestApi/Register/register.php',
+                'https://hardcoreratings.great-site.net/Controller/RestApi/Register/register.php',
                 {
                     username,
                     password,

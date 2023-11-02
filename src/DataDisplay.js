@@ -11,7 +11,7 @@ const DataDisplay = ({ songs, setSongs }) => { // Get songs and setSongs from pr
     const [selectedSong, setSelectedSong] = useState(null); // Selected song to be updated or deleted
 
     const updateSong = async (songId, songUpdate) => {
-        await axios.post(`http://localhost/homework3/Controller/RestApi/Ratings/update.php`, {
+        await axios.post(`https://hardcoreratings.great-site.net/Controller/RestApi/Ratings/update.php`, {
             id: songId,
             username: user,
             artist: songUpdate.artist,
@@ -19,15 +19,15 @@ const DataDisplay = ({ songs, setSongs }) => { // Get songs and setSongs from pr
             rating: songUpdate.rating,
         });
         // After the update, fetch the data again to refresh the list
-        const res = await axios.get(`http://localhost/homework3/Controller/RestApi/Ratings/Read_ratings.php`);
+        const res = await axios.get(`https://hardcoreratings.great-site.net/Controller/RestApi/Ratings/Read_ratings.php`);
         setSongs(res.data.body || []) // update songs list
         setMode('display');
     }
 
     const deleteSong = async (song) => {
-        await axios.delete(`http://localhost/homework3/Controller/RestApi/Ratings/delete.php?song=${song}`);
+        await axios.delete(`https://hardcoreratings.great-site.net/Controller/RestApi/Ratings/delete.php?song=${song}`);
         // After the delete, fetch the data again to refresh the list
-        const res = await axios.get(`http://localhost/homework3/Controller/RestApi/Ratings/Read_ratings.php`);
+        const res = await axios.get(`https://hardcoreratings.great-site.net/Controller/RestApi/Ratings/Read_ratings.php`);
         setSongs(res.data.body || []) // update songs list
         setMode('display');
     }

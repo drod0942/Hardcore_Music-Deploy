@@ -31,7 +31,7 @@ function App() {
 
   // Initial data fetching when component mounts
   useEffect(() => {
-    axios.get(`http://localhost/homework3/Controller/RestApi/Ratings/Read_ratings.php`)
+    axios.get(`https://hardcoreratings.great-site.net/Controller/RestApi/Ratings/Read_ratings.php`)
       .then(({ data }) => setSongs(data.body || []))
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
